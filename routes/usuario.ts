@@ -169,7 +169,7 @@ userRoutes.post('/recuperar-clave',async(req:Request,res:Response)=>{
   });
 
   var mailOptions = {
-    from: '-',
+    from: 'nicepatty1992@gmail.com',
     to: email,
     subject: 'Cambio de Clave de RegistrAPP',
     text: 'Su nueva clave es: " '+ claveNueva + ' "'

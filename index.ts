@@ -21,7 +21,7 @@ server.app.use('/api',userRoutes)
 server.app.use('/posts',postRoutes)
 
 //conectar db
-mongoose.connect('mongodb+srv://paty:eKqnzBFGaAlXcPaf@mymongocluster.wdyidzo.mongodb.net/registro-asistencia?retryWrites=true&w=majority');
+mongoose.connect('-');
 console.log('ok db');
 
 //levantar express
