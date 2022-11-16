@@ -21,7 +21,7 @@ server.app.use('/api',userRoutes)
 server.app.use('/posts',postRoutes)
 
 //conectar db
-mongoose.connect('-');
+//mongoose.connect('-');
 console.log('ok db');
 
 //levantar express
