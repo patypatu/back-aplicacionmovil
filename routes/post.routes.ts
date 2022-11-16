@@ -4,6 +4,16 @@ import { Post } from '../models/post.model';
 
 const postRoutes = Router();
 
+//test
+postRoutes.get('/test', async (req: any, res: Response)=>{
+
+    res.json({
+        ok:true,
+        message:"Hola"
+    });
+
+});
+
 //obtener post paginados
 
 postRoutes.get('/', [verificaToken], async (req: any, res: Response)=>{
