@@ -12,12 +12,13 @@ const userRoutes = Router();
 //login
 userRoutes.post('/login',(req: Request, res: Response)=>{
     const body = req.body;
-
+    console.log(body);
     Usuario.findOne({rut:body.rut},(err: any ,userBD: any)=>{
         
         if (err) throw err;
 
         if(!userBD){
+            console.log('usuario no existe');
             return res.json({
                 ok:false,
                 mensaje: 'Usuario/Contraseña no son correctos'
@@ -39,6 +40,7 @@ userRoutes.post('/login',(req: Request, res: Response)=>{
                 token: tokenUsuario
             });
         }else{
+            console.log('clave incorrecta');
             return res.json({
                 ok: false,
                 mensaje: 'Usuario/Contraseña no son correctos' 
@@ -163,13 +165,13 @@ userRoutes.post('/recuperar-clave',async(req:Request,res:Response)=>{
     service: 'gmail',
     host: 'smtp.gmail.com',
     auth: {
-      user: '-',
-      pass: '-'
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
     }
   });
 
   var mailOptions = {
-    from: 'nicepatty1992@gmail.com',
+    from: process.env.EMAIL_USER,
     to: email,
     subject: 'Cambio de Clave de RegistrAPP',
     text: 'Su nueva clave es: " '+ claveNueva + ' "'
