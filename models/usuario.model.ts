@@ -27,9 +27,9 @@ const usuarioSchema = new Schema(
             type: String,
             required: [true, 'La contraseña es necesaria']
         },
-        tipo: {
+        role: {
             type: String,
-            default: 'a'
+            default: 'estudiante'
         },
 });
 
@@ -49,7 +49,7 @@ interface Iusuario extends Document {
     apellido: string;
     email: string;
     password: string;
-    tipo: string;
+    role: string;
 
     compararPassword(password: string):boolean;
 }
