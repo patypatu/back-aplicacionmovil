@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import userRoutes from './routes/usuario';
 import postRoutes from './routes/post.routes';
+import registroRoutes from "./routes/registro-asistencia.routes";
 import cors from 'cors';
 
 
@@ -19,6 +20,7 @@ server.app.use(cors({origin: true, credentials: true}));
 //rutas de mi app
 server.app.use('/api',userRoutes)
 server.app.use('/posts',postRoutes)
+server.app.use('/registro', registroRoutes)
 
 //conectar db
 mongoose.connect(process.env.MONGOCONNECT || '');

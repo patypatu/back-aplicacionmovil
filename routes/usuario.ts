@@ -32,7 +32,8 @@ userRoutes.post('/login',(req: Request, res: Response)=>{
                 rut: userBD.rut,
                 nombre: userBD.nombre,
                 apellido: userBD.apellido,
-                email:userBD.email
+                email:userBD.email,
+                role:userBD.role
             });
 
             res.json({
@@ -67,6 +68,7 @@ userRoutes.post('/crea_usuario',(req: Request, res: Response)=>{
             nombre: userBD.nombre,
             apellido: userBD.apellido,
             email:userBD.email
+            
         });
 
         res.json({
