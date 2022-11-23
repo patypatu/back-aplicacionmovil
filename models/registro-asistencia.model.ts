@@ -7,9 +7,20 @@ const registroSchema = new Schema(
             required: [true, 'El rut del estudiante es obligatorio']
     
         },
+        nombre_estudiante:{
+            type: String,
+            required: [true, 'El nombre es obligatoria']
+    
+        },
         asignatura:{
             type: String,
             required: [true, 'La asignatura es obligatoria']
+    
+        },
+        
+        nombre_docente:{
+            type: String,
+            required: [true, 'El nombre del docente es obligatorio']
     
         },
         rut_docente:{
@@ -35,7 +46,9 @@ const registroSchema = new Schema(
 
 interface Iregistro extends Document {
     rut_estudiante: string;
+    nombre_estudiante: string;
     asignatura: string;
+    nombre_docente: string;
     rut_docente: string;
     sala: string;
     fecha: string;

@@ -8,6 +8,8 @@ registroRoutes.post('/registro-asistencia',(req:Request, res:Response)=>{
     const registro = {
         rut_estudiante: req.body.rut_estudiante,
         asignatura: req.body.asignatura,
+        nombre_estudiante: req.body.nombre_estudiante,
+        nombre_docente: req.body.nombre_docente,
         rut_docente: req.body.rut_docente,
         fecha: req.body.fecha,
         hora: req.body.hora,
